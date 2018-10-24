@@ -50,7 +50,7 @@ npm run start:dev
 
 ## Configuring Client
 
-Install dependencies in `client` folder
+Install dependencies in `frontend` folder
 
 ```
 cd client
