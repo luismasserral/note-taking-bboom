@@ -6,20 +6,22 @@
       ref="noteForm"
       v-bind:model="form"
     >
+      <note-form-color :on-change="updateColor" />
       <el-form-item
         label="Create a new note"
         prop="text"
       >
         <el-input
-          class="note__form-text"
+          class="notes__form-text"
           placeholder="Enter your note..."
           ref="noteTextarea"
           type="textarea"
           v-model="form.text"
+          :style="{'box-shadow': '0 0 12px' + form.color}"
         />
       </el-form-item>
       <el-button
-        class="note__form-create"
+        class="notes__form-create"
         type="primary"
         v-bind:disabled="!form.text.trim().length"
         v-loading="loading"
@@ -32,11 +34,17 @@
 </template>
 
 <script>
+import NoteFormColor from '@/components/NoteFormColor.vue';
+
 export default {
   name: 'NoteForm',
+  components: {
+    NoteFormColor,
+  },
   data() {
     return {
       form: {
+        color: '#4f8ad9',
         text: '',
       },
       loading: false,
@@ -47,7 +55,10 @@ export default {
       this.loading = true;
 
       try {
-        await this.$store.dispatch('notes/create', { text: this.form.text });
+        await this.$store.dispatch('notes/create', {
+          color: this.form.color,
+          text: this.form.text,
+        });
 
         this.loading = false;
         this.form.text = '';
@@ -57,6 +68,9 @@ export default {
 
         this.loading = false;
       }
+    },
+    updateColor(color) {
+      this.form.color = color;
     },
   },
 };

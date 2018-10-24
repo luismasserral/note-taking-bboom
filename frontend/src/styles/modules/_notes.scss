@@ -1,9 +1,19 @@
 .notes {
+  position: relative;
   width: 100%;
 
   @include breakpoint("sm") {
     margin: 0 auto;
     width: 700px;
+  }
+
+  &__color-select {
+    position: absolute;
+    right: 0;
+  }
+
+  &__form-text {
+    margin-top: 20px;
   }
 
   &__list {
@@ -12,6 +22,7 @@
 
   &__list-item {
     margin-bottom: 12px;
+    position: relative;
   }
 
   &__list-item-action {

@@ -1,6 +1,6 @@
 # Note App - BBoom
 
-![Note App - BBoom](https://i.imgur.com/LlOtjyN.png "Note App - BBoom")
+![Note App - BBoom](https://i.imgur.com/gdEgG7Z.png "Note App - BBoom")
 
 
 ## Configuring Server
