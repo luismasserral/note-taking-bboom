@@ -20,14 +20,16 @@ const findById = id => Note.findOne({
   },
 });
 
-const create = (text, userId) => Note.create({
+const create = (text, color, userId) => Note.create({
   text,
+  color,
   userId,
 });
 
-const update = (text, id, userId) => Note.update(
+const update = (text, color, id, userId) => Note.update(
   {
     text,
+    color,
   },
   {
     where: {

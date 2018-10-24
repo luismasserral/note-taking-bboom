@@ -10,6 +10,10 @@ module.exports = {
       allowNull: false,
       type: Sequelize.TEXT,
     },
+    color: {
+      allowNull: false,
+      type: Sequelize.STRING,
+    },
     createdAt: {
       allowNull: false,
       defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()'),

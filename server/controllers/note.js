@@ -13,7 +13,7 @@ const getNotes = async (req, res) => {
 
 const createNote = async (req, res) => {
   try {
-    await NoteProvider.create(req.body.text, req.user.id);
+    await NoteProvider.create(req.body.text, req.body.color, req.user.id);
 
     const newNote = await NoteProvider.findLast(req.user.id);
 
@@ -25,7 +25,7 @@ const createNote = async (req, res) => {
 
 const updateNote = async (req, res) => {
   try {
-    await NoteProvider.update(req.body.text, req.params.noteId, req.user.id);
+    await NoteProvider.update(req.body.text, req.body.color, req.params.noteId, req.user.id);
 
     const note = await NoteProvider.findById(req.params.noteId);
 

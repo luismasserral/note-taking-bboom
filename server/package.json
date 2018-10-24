@@ -4,7 +4,7 @@
   "description": "Note Taking Server - BBoom",
   "main": "app.js",
   "scripts": {
-    "sequelize": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+    "sequelize": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "start:dev": "NODE_ENV=development nodemon ./bin/www"
   },
   "author": "Luis Mas Serral <luis.mas.serral@gmail.com>",
